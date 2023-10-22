@@ -1,24 +1,32 @@
 #include "main.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * more_numbers - Prints 0 to 14 ten times
  */
-int main(void)
+void more_numbers(void)
 {
-    more_numbers();
-    return (0);
+	int i, j, k, doubleDigit;
+
+	for (j = 0; j < 10; j++)
+	{
+		for (i = 0; i < 15; i++)
+		{
+			if (i < 10)
+			{
+				_putchar(i + '0');
+			}
+			else
+			{
+				for (k = 0; k < 2; k++)
+				{
+					if (k == 0)
+						doubleDigit = i / 10;
+					else
+						doubleDigit = i % 10;
+					_putchar(doubleDigit + '0');
+				}
+			}
+		}
+		_putchar('\n');
+	}
 }
-julien@ubuntu:~/$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 5-main.c 5-more_numbers.c -o 5-more_numbers
-julien@ubuntu:~/$ ./5-more_numbers 
-01234567891011121314
-01234567891011121314
-01234567891011121314
-01234567891011121314
-01234567891011121314
-01234567891011121314
-01234567891011121314
-01234567891011121314
-01234567891011121314
-01234567891011121314

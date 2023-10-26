@@ -9,7 +9,6 @@
  *
  * Return: void
  */
-void print_line(char *c, int s, int l)
 {
 	int j, k;
 
@@ -38,7 +37,6 @@ void print_line(char *c, int s, int l)
  *
  * Return: void
  */
-void print_buffer(char *b, int size)
 {
 	int i;
 

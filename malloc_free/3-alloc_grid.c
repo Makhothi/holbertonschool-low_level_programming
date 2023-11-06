@@ -1,52 +1,48 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
- * str_concat - concatenates 2 string
- * a NULL string is treated as an empty string
- * @s1: pointer to string
- * @s2: pointer to string
+ * alloc_grid - create a matrix using malloc
+ * @width: width of the matrix
+ * @height: height of the matrix
  *
- * Return: pointer tto newly allocated memory which
- * has s1, s2, and null byte
- * NULL onfailure
+ * Return: return a pointer of pointer or null
  */
-char *str_concat(char *s1, char *s2)
+int **alloc_grid(int width, int height)
 {
-	unsigned int len1, len2, size, i, j;
-	char *nstr;
+	int i, j, a, b;
+	int **p;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-
-	len1 = 0;
-	while (s1[len1] != '\0')
-		len1++;
-	len2 = 0;
-	while (s2[len2] != '\0')
-		len2++;
-
-	size = len1 + len2;
-
-	nstr = malloc((sizeof(char) * size) + 1);
-	/*check if malloc was successful */
-	if (nstr == NULL)
+	if (width <= 0 || height <= 0)
+	{
 		return (NULL);
-
-	i = 0;
-	while (i < len1)
-	{
-		nstr[i] = s1[i];
-		i++;
 	}
-	j = 0;
-	while (i <= size)
+	else
 	{
-		nstr[i] = s2[j];
-		i++;
-		j++;
+		p = (int **) malloc(height * sizeof(int *));
+		/* we have to make a malloc per pointer*/
+		if (!p)
+		{
+			free(p);
+			return (NULL);
+		}
+		for (i = 0; i < height; i++)
+		{
+			p[i] = (int *) malloc(width * sizeof(int));
+			if (!p[i])
+			{
+				for (j = 0; j <= i; j++)
+					free(p[j]);
+				free(p);
+				return (NULL);
+			}
+		}
+		for (a = 0; a < height; a++)
+		{
+			for (b = 0; b < width; b++)
+			{
+				p[a][b] = 0;
+			}
+		}
+		return (p);
 	}
-	return (nstr);
 }

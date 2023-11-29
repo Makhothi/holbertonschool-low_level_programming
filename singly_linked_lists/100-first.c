@@ -1,12 +1,13 @@
 #include <stdio.h>
 
+void before_main(void) __attribute__((constructor));
+
 /**
- * bmain - function executed before main
- * Return: no return.
+ * before_main - Function to print before main
  */
 
-void __attribute__ ((constructor)) bmain()
+void before_main(void)
 {
-    printf("(A tortoise, having pretty good sense of a hare's nature, challenges one to a race.)\n");
-    return (0);
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }

@@ -75,9 +75,8 @@ void print_magic(unsigned char *e_ident)
  */
 void print_class(unsigned char *e_ident)
 {
-	printf(" class:
-	switch ( e__ident[EI_CLASS]
-	{		
+	printf(" class: ")
+	switch ( e__ident[EI_CLASS]	{		
 	case ELFCLASSNONE:
 		printf("none\n");
 		break;

@@ -5,7 +5,7 @@
  *
  * Return: pointer to new table
  */
-shash_table_t *shash_table_create(unsigned long int size)
+shash_table_t *shash_table_create(unsigned long int size);
 {
 {
 	shash_table_t *new_table = NULL;

@@ -2,6 +2,9 @@
 #define HASH_TABLES_H
 
 #include <stdlib.h>
+#include "hash_tables.h"
+#include "1-djb2.c"
+#include "2-key_index.c"
 
 /**
  * struct hash_node_s - Node of a hash table

@@ -1,6 +1,6 @@
 /*
  * File: 104-advanced_binary.c
- * Auth: David Makhothi
+ * Auth: Tlali David Makhothi
  */
 
 #include "search_algos.h"
